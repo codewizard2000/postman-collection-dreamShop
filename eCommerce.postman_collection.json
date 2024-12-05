@@ -1,0 +1,473 @@
+{
+	"info": {
+		"_postman_id": "ae2f39eb-e84e-4ea5-9316-bbb1a2c4e1f9",
+		"name": "eCommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25664777"
+	},
+	"item": [
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "AuthUser",
+					"item": [
+						{
+							"name": "User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" :\"user4@gmail.com\",\r\n    \"password\" : \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9193/api/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9193",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" :\"admin1@gmail.com\",\r\n    \"password\" : \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9193/api/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9193",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9193/api/v1/products/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9193",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9193/api/v1/products/add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjFAZ21haWwuY29tIiwiaWQiOjUsInJvbGVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNzMzNDI4NTc5LCJleHAiOjE3MzM0MzIxNzl9.vLkmkNq7IoPxfC_zQIvjKe1Ob2ANWnOF8hk-Eai0gm8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"watch\",\r\n    \"brand\" : \"samsung\",\r\n    \"price\" : \"150\",\r\n    \"inventory\" : \"240\",\r\n    \"description\" : \"smat watch\",\r\n    \"category\" : \"gadget\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9193/api/v1/products/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9193",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9193/api/v1/products/by-brand?brand=Apple",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9193/api/v1/products/by-brand?brand=Apple",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9193",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"by-brand"
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "Apple"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9193/api/v1/products/product/electronics/all/products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9193/api/v1/products/product/electronics/all/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9193",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"product",
+								"electronics",
+								"all",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9193/api/v1/products/product/1/product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9193/api/v1/products/product/1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9193",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"product",
+								"1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "image",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/C:/Users/LENOVO/Downloads/imresizer-1732362347608.jpg"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/C:/Users/LENOVO/Downloads/imresizer-1732362347608.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9193/api/v1/images/upload?productId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9193",
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9193/api/v1/images/image/download/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9193/api/v1/images/image/download/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9193",
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"image",
+								"download",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": []
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "add item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9193/api/v1/cartItems/item/add?cartId&productId=1&quantity=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9193",
+							"path": [
+								"api",
+								"v1",
+								"cartItems",
+								"item",
+								"add"
+							],
+							"query": [
+								{
+									"key": "cartId",
+									"value": null
+								},
+								{
+									"key": "productId",
+									"value": "1"
+								},
+								{
+									"key": "quantity",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9193/api/v1/cartItems/cart/1/item/1/update?quantity=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9193",
+							"path": [
+								"api",
+								"v1",
+								"cartItems",
+								"cart",
+								"1",
+								"item",
+								"1",
+								"update"
+							],
+							"query": [
+								{
+									"key": "quantity",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9193/api/v1/cartItems/cart/1/item/1/remove",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9193",
+							"path": [
+								"api",
+								"v1",
+								"cartItems",
+								"cart",
+								"1",
+								"item",
+								"1",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clear",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9193/api/v1/carts/1/clear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9193",
+							"path": [
+								"api",
+								"v1",
+								"carts",
+								"1",
+								"clear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "total-price",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9193/api/v1/carts/1/cart/total-price",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9193",
+							"path": [
+								"api",
+								"v1",
+								"carts",
+								"1",
+								"cart",
+								"total-price"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9193/api/v1/users/1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9193",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
